@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>cron-streamripper</Name>
+    <Repository>dax333/cron-streamripper</Repository>
+    <Registry>https://registry.hub.docker.com/u/dax333/cron-streamripper/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/dax333/cron-streamripper</Support>
+    <Project/>
+    <Overview>streamripper that runs on a cron schedule</Overview>
+    <Category/>
+    <WebUI/>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled/>
+    <DonateText/>
+    <DonateLink/>
+    <Description>streamripper that runs on a cron schedule</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/cron-streamripper/programs</HostDir>
+            <ContainerDir>/home/streamripper/programs</ContainerDir>
+            <Mode>ro</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/appdata/cron-streamripper/streams</HostDir>
+            <ContainerDir>/home/streamripper/streams</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/appdata/cron-streamripper/cron</HostDir>
+            <ContainerDir>/etc/cron.d</ContainerDir>
+            <Mode>ro</Mode>
+        </Volume>
+    </Data>
+    <Environment/>
+    <Labels/>
+    <Config Name="Cron Dir" Target="/etc/cron.d" Default="" Mode="ro" Description="Container Path: /etc/cron.d" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cron-streamripper/cron</Config>
+    <Config Name="Streams Dir" Target="/home/streamripper/streams" Default="" Mode="rw" Description="Container Path: /home/streamripper/streams" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cron-streamripper/streams</Config>
+    <Config Name="Programs Dir" Target="/home/streamripper/programs" Default="" Mode="ro" Description="Container Path: /home/streamripper/programs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cron-streamripper/programs</Config>
+</Container>
