@@ -23,7 +23,13 @@
     <Description>Backend API container for Szurubooru with defaults needed for unRAID</Description>
     <Networking>
         <Mode>bridge</Mode>
-        <Publish/>
+        <Publish>
+            <Port>
+                <HostPort>6666</HostPort>
+                <ContainerPort>6666</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
     </Networking>
     <Data>
         <Volume>
@@ -72,4 +78,5 @@
     <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"></Config>
     <Config Name="Server Config" Target="/opt/app/config.yaml" Default="" Mode="rw" Description="Container Path: /opt/app" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/suzu/config.yaml</Config>
     <Config Name="Image Data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="true">/mnt/user/appdata/suzu/data</Config>
+    <Config Name="Api Port" Target="6666" Default="" Mode="tcp" Description="Container Port: 6666" Type="Port" Display="always" Required="true" Mask="false">6666</Config>
 </Container>
