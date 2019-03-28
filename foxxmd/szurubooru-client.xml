@@ -13,7 +13,7 @@
     <Category>MediaApp:Photo</Category>
     <WebUI/>
     <TemplateURL/>
-    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>

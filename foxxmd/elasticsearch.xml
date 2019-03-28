@@ -13,7 +13,7 @@
     <Category/>
     <WebUI/>
     <TemplateURL/>
-    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/elasticsearch.png</Icon>
     <ExtraParams>-e "ES_JAVA_OPTS"="-Xms512m -Xmx512m" --ulimit nofile=262144:262144</ExtraParams>
     <PostArgs/>
     <CPUset/>
