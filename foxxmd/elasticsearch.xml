@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>elasticsearch</Name>
+    <Repository>elasticsearch:6.6.2</Repository>
+    <Registry>https://github.com/docker-library/elasticsearch/blob/2b7cab01397ff37510c8970827fa4c399c87d23a/6/Dockerfile</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/_/elasticsearch</Support>
+    <Project/>
+    <Overview>Elasticsearch 6.6.2 with defaults for unRAID</Overview>
+    <Category/>
+    <WebUI/>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams>-e "ES_JAVA_OPTS"="-Xms512m -Xmx512m" --ulimit nofile=262144:262144</ExtraParams>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled/>
+    <DonateText/>
+    <DonateLink/>
+    <Description>Elasticsearch 6.6.2 with defaults for unRAID. Check the support thread for configuring host to use properly</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>9200</HostPort>
+                <ContainerPort>9200</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>9300</HostPort>
+                <ContainerPort>9300</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/elasticsearch/data</HostDir>
+            <ContainerDir>/usr/share/elasticsearch/data</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value>single-node</Value>
+            <Name>discovery.type</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <Config Name="Data" Target="/bitnami/elasticsearch/data" Default="" Mode="rw" Description="Container Path: /usr/share/elasticsearch/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elasticsearch/data</Config>
+    <Config Name="Http Port" Target="9200" Default="" Mode="tcp" Description="Container Port: 9200" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
+    <Config Name="Communication Port" Target="9300" Default="" Mode="tcp" Description="Container Port: 9300" Type="Port" Display="always" Required="false" Mask="false">9300</Config>
+    <Config Name="Discovery Type" Target="discovery.type" Default="" Mode="" Description="Container Variable: discovery.type" Type="Variable" Display="always" Required="false" Mask="false">single-node</Config>
+</Container>

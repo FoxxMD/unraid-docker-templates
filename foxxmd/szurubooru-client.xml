@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>szurubooru-client</Name>
+    <Repository>sgsunder/szurubooru-client</Repository>
+    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-client//Dockerfile/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/sgsunder/szurubooru-client/</Support>
+    <Project/>
+    <Overview>NGINX client container for szurubooru</Overview>
+    <Category>MediaApp:Photo</Category>
+    <WebUI/>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <Date>2019-03-27</Date>
+    <DonateText/>
+    <DonateLink/>
+    <Description>NGINX client container for szurubooru</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8118</HostPort>
+                <ContainerPort>80</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/szurubooru/data</HostDir>
+            <ContainerDir>/data</ContainerDir>
+            <Mode>ro</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value>latest</Value>
+            <Name>BUILD_INFO</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>BACKEND_HOST</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Config Name="Build Info" Target="BUILD_INFO" Default="" Mode="" Description="Container Variable: BUILD_INFO" Type="Variable" Display="always" Required="true" Mask="false">latest</Config>
+    <Config Name="Backend Host" Target="BACKEND_HOST" Default="" Mode="" Description="Container Variable: BACKEND_HOST" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Http Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8118</Config>
+    <Config Name="Data" Target="/data" Default="" Mode="ro" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/suzu/data</Config>
+</Container>

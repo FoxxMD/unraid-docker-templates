@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>szurubooru-api</Name>
+    <Repository>sgsunder/szurubooru-api</Repository>
+    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-api//Dockerfile/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/sgsunder/szurubooru-api/</Support>
+    <Project/>
+    <Overview>Backend API container for Szurubooru</Overview>
+    <Category>MediaServer:Photo</Category>
+    <WebUI/>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <Date>2019-03-27</Date>
+    <DonateText/>
+    <DonateLink/>
+    <Description>Backend API container for Szurubooru with defaults needed for unRAID</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/szurubooru/config.yaml</HostDir>
+            <ContainerDir>/opt/app/config.yaml</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/appdata/szurubooru/data</HostDir>
+            <ContainerDir>/data</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value></Value>
+            <Name>POSTGRES_HOST</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>POSTGRES_USER</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>POSTGRES_PASSWORD</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>POSTGRES_DB</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value></Value>
+            <Name>ESEARCH_HOST</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <Config Name="Elasticsearch Host" Target="ESEARCH_HOST" Default="" Mode="" Description="Container Variable: ESEARCH_HOST" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="" Mode="" Description="Container Variable: POSTGRES_HOST" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Postgres DB" Target="POSTGRES_DB" Default="" Mode="" Description="Container Variable: POSTGRES_DB" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Server Config" Target="/opt/app/config.yaml" Default="" Mode="rw" Description="Container Path: /opt/app" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/suzu/config.yaml</Config>
+    <Config Name="Image Data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="true">/mnt/user/appdata/suzu/data</Config>
+</Container>
