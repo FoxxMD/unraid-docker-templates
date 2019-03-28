@@ -55,5 +55,5 @@
     <Config Name="Build Info" Target="BUILD_INFO" Default="" Mode="" Description="Container Variable: BUILD_INFO" Type="Variable" Display="always" Required="true" Mask="false">latest</Config>
     <Config Name="Backend Host" Target="BACKEND_HOST" Default="" Mode="" Description="Container Variable: BACKEND_HOST" Type="Variable" Display="always" Required="true" Mask="false"></Config>
     <Config Name="Http Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8118</Config>
-    <Config Name="Data" Target="/data" Default="" Mode="ro" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/suzu/data</Config>
+    <Config Name="Data" Target="/data" Default="" Mode="ro" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/szurubooru/data</Config>
 </Container>
