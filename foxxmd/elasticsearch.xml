@@ -9,7 +9,19 @@
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/_/elasticsearch</Support>
     <Project>https://www.elastic.co/</Project>
-    <Overview>Elasticsearch with instructions for installation on unraid</Overview>
+    <Overview>
+        Elasticsearch with instructions for installation on unraid. [br][br]&#xD;
+        [b]Default Elasticsearch version is 6.6.2[/b][br]&#xD;
+        To change version simply edit the version tag in the repository field to an available version on dockerhub. [b]This template not tested on alpine images.[/b][br][br]&#xD;
+        [span style='color: #E80000;'][b]Directions below MUST be used in order to get Elasticsearch 5 and above working correctly.[/b][/span] Check support thread for more information.[br]&#xD;
+        [b][span style='color: #E80000;']Directions:[/span][/b][br]&#xD;
+        1. Install [b]CA User Scripts[/b][br]&#xD;
+        2. Create a new script named [b]vm.max_map_count[/b][br]&#xD;
+        3. Contents of script as follows: [br][br]&#xD;
+        [span style='font-family: monospace;']#!/bin/bash[br]&#xD;
+        sysctl -w vm.max_map_count=262144[/span][br][br]&#xD;
+        4. Set script schedule to [b]At Startup of Array[/b][br]&#xD;
+    </Overview>
     <Beta>False</Beta>
     <Category>Other: Tools:</Category>
     <Date>2019-04-01</Date>
