@@ -3,7 +3,6 @@
     <Name>elasticsearch</Name>
     <Repository>elasticsearch:6.6.2</Repository>
     <Registry>https://hub.docker.com/_/elasticsearch</Registry>
-    <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/_/elasticsearch</Support>
@@ -42,6 +41,7 @@
             </Port>
         </Publish>
     </Networking>
+    <Network Default="bridge">bridge</Network>
     <Data>
         <Volume>
             <HostDir>/mnt/user/appdata/elasticsearch/data</HostDir>
@@ -51,14 +51,12 @@
     </Data>
     <Environment>
         <Variable>
-            <Value>single-node</Value>
             <Name>discovery.type</Name>
-            <Mode/>
         </Variable>
     </Environment>
     <Labels/>
-    <Config Name="Data" Target="/usr/share/elasticsearch/data" Default="" Mode="rw" Description="Directory where ES data is persisted" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elasticsearch/data</Config>
-    <Config Name="REST API Port" Target="9200" Default="" Mode="tcp" Description="Host port exposed for REST HTTP interface. Container port: 9200" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
-    <Config Name="Nodes Communication Port" Target="9300" Default="" Mode="tcp" Description="Host port exposed for node communication. Container port: 9300" Type="Port" Display="always" Required="false" Mask="false">9300</Config>
-    <Config Name="Discovery Type" Target="discovery.type" Default="" Mode="" Description="Container Variable: discovery.type" Type="Variable" Display="always" Required="false" Mask="false">single-node</Config>
+    <Config Name="Data" Target="/usr/share/elasticsearch/data" Default="/mnt/user/appdata/elasticsearch/data" Mode="rw" Description="Directory where ES data is persisted" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/elasticsearch/data</Config>
+    <Config Name="REST API Port" Target="9200" Default="9200" Mode="tcp" Description="Host port exposed for REST HTTP interface." Type="Port" Display="always" Required="true" Mask="false">9200</Config>
+    <Config Name="Nodes Communication Port" Target="9300" Default="9300" Mode="tcp" Description="Host port exposed for node communication." Type="Port" Display="always" Required="true" Mask="false">9300</Config>
+    <Config Name="Discovery Type" Target="discovery.type" Default="single-node" Mode="" Description="Container Variable: discovery.type" Type="Variable" Display="always" Required="true" Mask="false">single-node</Config>
 </Container>
