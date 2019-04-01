@@ -1,26 +1,32 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
     <Name>elasticsearch</Name>
     <Repository>elasticsearch:6.6.2</Repository>
-    <Registry>https://github.com/docker-library/elasticsearch/blob/2b7cab01397ff37510c8970827fa4c399c87d23a/6/Dockerfile</Registry>
+    <Registry>https://hub.docker.com/_/elasticsearch</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/_/elasticsearch</Support>
-    <Project/>
-    <Overview>Elasticsearch 6.6.2 with defaults for unRAID</Overview>
-    <Category/>
-    <WebUI/>
-    <TemplateURL/>
+    <Project>https://www.elastic.co/</Project>
+    <Overview>Elasticsearch with instructions for installation on unraid</Overview>
+    <Category>Other</Category>
+    <WebUI>http://[IP]:[PORT:9200]/</WebUI>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/elasticsearch.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/elasticsearch.png</Icon>
     <ExtraParams>-e "ES_JAVA_OPTS"="-Xms512m -Xmx512m" --ulimit nofile=262144:262144</ExtraParams>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled/>
-    <DonateText/>
-    <DonateLink/>
-    <Description>Elasticsearch 6.6.2 with defaults for unRAID. Check the support thread for configuring host to use properly</Description>
+    <Description>
+        Elasticsearch with instructions for installation on unraid. [br][br]
+        [b]Default Elasticsearch version is 6.6.2[/b][br]
+        To change version simply edit the version tag in the repository field to an available version on dockerhub. [b]This template not tested on alpine images.[/b][br][br]
+        [span style='color: #E80000;'][b]Directions below MUST be used in order to get Elasticsearch 5 and above working correctly.[/b][/span] Check support thread for more information.[br]
+        [b][span style='color: #E80000;']Directions:[/span][/b][br]
+        1. Install [b]CA User Scripts[/b][br]
+        2. Create a new script named [b]vm.max_map_count[/b][br]
+        3. Contents of script as follows: [br][br]
+        [span style='font-family: monospace;']#!/bin/bash[br]
+        sysctl -w vm.max_map_count=262144[/span][br][br]
+        4. Set script schedule to [b]At Startup of Array[/b][br]
+    </Description>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -51,8 +57,8 @@
         </Variable>
     </Environment>
     <Labels/>
-    <Config Name="Data" Target="/bitnami/elasticsearch/data" Default="" Mode="rw" Description="Container Path: /usr/share/elasticsearch/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elasticsearch/data</Config>
-    <Config Name="Http Port" Target="9200" Default="" Mode="tcp" Description="Container Port: 9200" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
-    <Config Name="Communication Port" Target="9300" Default="" Mode="tcp" Description="Container Port: 9300" Type="Port" Display="always" Required="false" Mask="false">9300</Config>
+    <Config Name="Data" Target="/usr/share/elasticsearch/data" Default="" Mode="rw" Description="Directory where ES data is persisted" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elasticsearch/data</Config>
+    <Config Name="REST API Port" Target="9200" Default="" Mode="tcp" Description="Host port exposed for REST HTTP interface. Container port: 9200" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
+    <Config Name="Nodes Communication Port" Target="9300" Default="" Mode="tcp" Description="Host port exposed for node communication. Container port: 9300" Type="Port" Display="always" Required="false" Mask="false">9300</Config>
     <Config Name="Discovery Type" Target="discovery.type" Default="" Mode="" Description="Container Variable: discovery.type" Type="Variable" Display="always" Required="false" Mask="false">single-node</Config>
 </Container>
