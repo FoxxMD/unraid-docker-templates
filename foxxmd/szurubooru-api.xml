@@ -1,20 +1,31 @@
 <?xml version="1.0"?>
-<Container version="3">
-    <Name>szurubooru-api</Name>
+<Container version="2">
+    <Name>szurubooru-api-template</Name>
     <Repository>sgsunder/szurubooru-api</Repository>
     <Registry>https://hub.docker.com/r/sgsunder/szurubooru-api</Registry>
     <Network>bridge</Network>
+    <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/r/sgsunder/szurubooru-api</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
-    <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities</Overview>
+    <Overview>&#xD;
+        Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
+        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
+    </Overview>
     <Category>MediaServer:Photo</Category>
+    <WebUI/>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-api.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
-    <Description>
-        Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]
-        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1554136963</DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <Description>&#xD;
+        Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
+        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
     </Description>
     <Networking>
         <Mode>bridge</Mode>
@@ -40,38 +51,38 @@
     </Data>
     <Environment>
         <Variable>
-            <Value></Value>
+            <Value/>
             <Name>ESEARCH_HOST</Name>
             <Mode/>
         </Variable>
         <Variable>
-            <Value></Value>
+            <Value/>
             <Name>POSTGRES_HOST</Name>
             <Mode/>
         </Variable>
         <Variable>
-            <Value></Value>
+            <Value/>
             <Name>POSTGRES_DB</Name>
             <Mode/>
         </Variable>
         <Variable>
-            <Value></Value>
+            <Value/>
             <Name>POSTGRES_USER</Name>
             <Mode/>
         </Variable>
         <Variable>
-            <Value></Value>
+            <Value/>
             <Name>POSTGRES_PASSWORD</Name>
             <Mode/>
         </Variable>
     </Environment>
     <Labels/>
-    <Config Name="Elasticsearch Host" Target="ESEARCH_HOST" Default="" Mode="" Description="IP address of Elasticsearch instance" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="" Mode="" Description="IP address of Postgres instance" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Postgres DB" Target="POSTGRES_DB" Default="" Mode="" Description="Name of the database on Postgres instance to use" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Mode="" Description="Username of Postgres user" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Password of Postgres user" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Server Config File" Target="/opt/app/config.yaml" Default="" Mode="rw" Description="(Optional) YAML config file to override server production settings" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/szurubooru/config.yaml</Config>
-    <Config Name="Image Data" Target="/data" Default="" Mode="rw" Description="Directory on host to store image data" Type="Path" Display="always" Required="true" Mask="true">/mnt/user/appdata/szurubooru/data</Config>
-    <Config Name="Api Port" Target="6666" Default="" Mode="tcp" Description="Port to expose API interface on. This is accessed by the frontend." Type="Port" Display="always" Required="true" Mask="false">6666</Config>
+    <Config Name="Elasticsearch Host" Target="ESEARCH_HOST" Default="" Mode="" Description="IP address of Elasticsearch instance" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="" Mode="" Description="IP address of Postgres instance" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Postgres DB" Target="POSTGRES_DB" Default="" Mode="" Description="Name of the database on Postgres instance to use" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Mode="" Description="Username of Postgres user" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Password of Postgres user" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Server Config File" Target="/opt/app/config.yaml" Default="/mnt/user/appdata/szurubooru/config.yaml" Mode="rw" Description="(Optional) YAML config file to overrideserver production settings" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/szurubooru/config.yaml</Config>
+    <Config Name="Image Data" Target="/data" Default="/mnt/user/appdata/szurubooru/data" Mode="rw" Description="Directory on host to store image data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/szurubooru/data</Config>
+    <Config Name="Api Port" Target="6666" Default="6666" Mode="tcp" Description="Port to expose API interface on. This is accessed by the frontend." Type="Port" Display="always" Required="true" Mask="false">6666</Config>
 </Container>
