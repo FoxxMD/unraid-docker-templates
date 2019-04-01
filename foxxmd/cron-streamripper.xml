@@ -20,7 +20,7 @@
     <Date>2019-04-01</Date>
     <WebUI/>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/cron-streamripper.xml</TemplateURL>
-    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/antenna.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>

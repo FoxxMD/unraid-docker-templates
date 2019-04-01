@@ -18,7 +18,7 @@
     <Date>2019-04-01</Date>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-client.xml</TemplateURL>
-    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/szurubooru.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>

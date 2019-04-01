@@ -17,7 +17,7 @@
     <Date>2019-04-01</Date>
     <WebUI/>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-api.xml</TemplateURL>
-    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/szurubooru.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
