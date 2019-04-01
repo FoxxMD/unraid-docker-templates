@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>szurubooru-api-template</Name>
+    <Name>szurubooru-api</Name>
     <Repository>sgsunder/szurubooru-api</Repository>
     <Registry>https://hub.docker.com/r/sgsunder/szurubooru-api</Registry>
     <Network>bridge</Network>
