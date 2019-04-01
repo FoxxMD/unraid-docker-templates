@@ -9,21 +9,19 @@
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/r/sgsunder/szurubooru-client</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
-    <Overview>&#xD;
-        Frontend container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
-        Requires the backend container, [b]szurubooru-api[/b], in order to work.&#xD;
-    </Overview>
-    <Category>MediaApp:Photo</Category>
+    <Overview>Frontend container for Szurubooru, an image board engine for small and medium communities</Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos</Category>
+    <Date>2019-04-01</Date>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-client.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
-    <DateInstalled>1554137097</DateInstalled>
     <DonateText/>
     <DonateLink/>
-    <Description>&#xD;
+    <Description>
         Frontend container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
         Requires the backend container, [b]szurubooru-api[/b], in order to work.&#xD;
     </Description>

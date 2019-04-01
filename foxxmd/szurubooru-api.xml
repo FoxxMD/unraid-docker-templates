@@ -9,21 +9,19 @@
     <Privileged>false</Privileged>
     <Support>https://hub.docker.com/r/sgsunder/szurubooru-api</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
-    <Overview>&#xD;
-        Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
-        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
-    </Overview>
-    <Category>MediaServer:Photo</Category>
+    <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities</Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Photos</Category>
+    <Date>2019-04-01</Date>
     <WebUI/>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-api.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
-    <DateInstalled>1554136963</DateInstalled>
     <DonateText/>
     <DonateLink/>
-    <Description>&#xD;
+    <Description>
         Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
         [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
     </Description>
