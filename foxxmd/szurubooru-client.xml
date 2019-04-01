@@ -1,26 +1,21 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
     <Name>szurubooru-client</Name>
     <Repository>sgsunder/szurubooru-client</Repository>
-    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-client//Dockerfile/</Registry>
+    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-client</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/sgsunder/szurubooru-client/</Support>
-    <Project/>
-    <Overview>NGINX client container for szurubooru</Overview>
+    <Support>https://hub.docker.com/r/sgsunder/szurubooru-client</Support>
+    <Project>https://github.com/rr-/szurubooru</Project>
+    <Overview>Frontend container for Szurubooru, an image board engine for small and medium communities</Overview>
     <Category>MediaApp:Photo</Category>
-    <WebUI/>
-    <TemplateURL/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/szurubooru-client.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/sIcon.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <Date>2019-03-27</Date>
-    <DonateText/>
-    <DonateLink/>
-    <Description>NGINX client container for szurubooru</Description>
+    <Description>
+        Frontend container for Szurubooru, an image board engine for small and medium communities[br][br]
+        Requires the backend container, [b]szurubooru-api[/b], in order to work.
+    </Description>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -52,8 +47,8 @@
     </Environment>
     <Labels/>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
-    <Config Name="Build Info" Target="BUILD_INFO" Default="" Mode="" Description="Container Variable: BUILD_INFO" Type="Variable" Display="always" Required="true" Mask="false">latest</Config>
-    <Config Name="Backend Host" Target="BACKEND_HOST" Default="" Mode="" Description="Container Variable: BACKEND_HOST" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="Http Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8118</Config>
-    <Config Name="Data" Target="/data" Default="" Mode="ro" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/szurubooru/data</Config>
+    <Config Name="Build Info" Target="BUILD_INFO" Default="" Mode="" Description="Determines which git commit to use to build client code. Recommend keep as 'latest'" Type="Variable" Display="always" Required="true" Mask="false">latest</Config>
+    <Config Name="Backend Host" Target="BACKEND_HOST" Default="" Mode="" Description="IP Address of the backend API instance" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Http Port" Target="80" Default="" Mode="tcp" Description="Port to serve site to on host" Type="Port" Display="always" Required="true" Mask="false">8118</Config>
+    <Config Name="Data" Target="/data" Default="" Mode="ro" Description="Directory on host where image data is stored. Should be same as 'Image Data' variable on szurubooru-api" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/szurubooru/data</Config>
 </Container>
