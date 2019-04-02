@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/dax333/cron-streamripper</Support>
+    <Support>https://forums.unraid.net/topic/79122-support-foxxmd-cron-streamripper</Support>
     <Project>http://streamripper.sourceforge.net/</Project>
     <Overview>
         Streamripper that runs on a cron schedule[br][br]&#xD;

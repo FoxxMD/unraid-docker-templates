@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/sgsunder/szurubooru-api</Support>
+    <Support>https://forums.unraid.net/topic/79126-support-foxxmd-szurubooru/</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
     <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
         [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;

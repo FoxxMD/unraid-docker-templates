@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/_/elasticsearch</Support>
+    <Support>https://forums.unraid.net/topic/79125-support-foxxmd-elasticsearch</Support>
     <Project>https://www.elastic.co/</Project>
     <Overview>
         Elasticsearch with instructions for installation on unraid. [br][br]&#xD;
