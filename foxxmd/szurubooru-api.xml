@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
     <Name>szurubooru-api</Name>
     <Repository>sgsunder/szurubooru-api</Repository>
     <Registry>https://hub.docker.com/r/sgsunder/szurubooru-api</Registry>
@@ -26,6 +26,7 @@
     <Description>
         Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
         [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
+        (Optional) To use your own config.yaml create a Path config that mounts to [b]/opt/app/config.yaml[/b] in the container&#xD;
     </Description>
     <Networking>
         <Mode>bridge</Mode>
@@ -38,11 +39,6 @@
         </Publish>
     </Networking>
     <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/szurubooru/config.yaml</HostDir>
-            <ContainerDir>/opt/app/config.yaml</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
         <Volume>
             <HostDir>/mnt/user/appdata/szurubooru/data</HostDir>
             <ContainerDir>/data</ContainerDir>
@@ -82,7 +78,6 @@
     <Config Name="Postgres DB" Target="POSTGRES_DB" Default="" Mode="" Description="Name of the database on Postgres instance to use" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Mode="" Description="Username of Postgres user" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Password of Postgres user" Type="Variable" Display="always" Required="true" Mask="true"/>
-    <Config Name="Server Config File" Target="/opt/app/config.yaml" Default="/mnt/user/appdata/szurubooru/config.yaml" Mode="rw" Description="(Optional) YAML config file to overrideserver production settings" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/szurubooru/config.yaml</Config>
     <Config Name="Image Data" Target="/data" Default="/mnt/user/appdata/szurubooru/data" Mode="rw" Description="Directory on host to store image data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/szurubooru/data</Config>
     <Config Name="Api Port" Target="6666" Default="6666" Mode="tcp" Description="Port to expose API interface on. This is accessed by the frontend." Type="Port" Display="always" Required="true" Mask="false">6666</Config>
 </Container>
