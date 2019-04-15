@@ -25,7 +25,7 @@
     <Date>2019-04-15</Date>
     <WebUI>http://[IP]:[PORT:8080]/gmap.html</WebUI>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/fr24feed-piaware.xml</TemplateURL>
-    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/flightaware.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/flightaware.jpg</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
