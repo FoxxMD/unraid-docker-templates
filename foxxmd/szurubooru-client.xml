@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>szurubooru-client</Name>
-    <Repository>sgsunder/szurubooru-client</Repository>
-    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-client</Registry>
+    <Repository>szurubooru/client:latest</Repository>
+    <Registry>https://hub.docker.com/r/szurubooru/client</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>bash</Shell>

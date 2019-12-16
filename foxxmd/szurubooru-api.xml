@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="3">
     <Name>szurubooru-api</Name>
-    <Repository>sgsunder/szurubooru-api</Repository>
-    <Registry>https://hub.docker.com/r/sgsunder/szurubooru-api</Registry>
+    <Repository>szurubooru/server:latest</Repository>
+    <Registry>https://hub.docker.com/r/szurubooru/server</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>bash</Shell>
