@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="1">
+    <Name>shoginn-dump1090</Name>
+    <Repository>shoginn/dump1090:latest</Repository>
+    <Registry>https://hub.docker.com/r/shoginn/dump1090</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/86318-support-foxxmd-shoginn-dump1090/</Support>
+    <Project>https://github.com/ShoGinn/dump1090</Project>
+    <Overview>dump1090 is a simple Mode S decoder for RTLSDR devices[br][br]&#xD;
+        This is a docker build for flightaware's dump1090 designed to feed ADSB data from any RTLSDR USB, serial/network AVR, or BEAST device.[br][br]&#xD;
+        [b]Usage[/b][br][br]&#xD;
+        [b]* You must provide the path to the radio device using the RTL-SDR Device mapping.[/b] Refer to the support thread for instructions on how to find and provide a USB device for this mapping.[br]&#xD;
+        * Ports for raw/beast output consumption have defaults provided. Clients will use these ports to consume the data (flightaware, flightrader24, etc.)[br]
+    </Overview>
+    <WebUI/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/shoginn-dump1090.xml</TemplateURL>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/dump1090.png</Icon>
+    <ExtraParams>--cap-add=SYS_NICE</ExtraParams>
+    <PostArgs/>
+    <CPUset/>
+    <Beta>False</Beta>
+    <Category>Network:Web Other:</Category>
+    <Date>2019-12-19</Date>
+    <DonateText/>
+    <DonateLink/>
+    <Description>dump1090 is a simple Mode S decoder for RTLSDR devices[br][br]&#xD;
+        This is a docker build for flightaware's dump1090 designed to feed ADSB data from any RTLSDR USB, serial/network AVR, or BEAST device.[br][br]&#xD;
+        [b]Usage[/b][br][br]&#xD;
+        [b]* You must provide the path to the radio device using the RTL-SDR Device mapping.[/b] Refer to the support thread for instructions on how to find and provide a USB device for this mapping.[br]&#xD;
+        * Ports for raw/beast output consumption have defaults provided. Clients will use these ports to consume the data (flightaware, flightrader24, etc.)[br]</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>30002</HostPort>
+                <ContainerPort>30002</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>30005</HostPort>
+                <ContainerPort>30005</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data/>
+    <Environment/>
+    <Labels/>
+    <Config Name="Raw Output Port" Target="30002" Default="" Mode="tcp" Description="Container Port: 30002" Type="Port" Display="always" Required="true" Mask="false">30002</Config>
+    <Config Name="Beast Output Port" Target="30005" Default="" Mode="tcp" Description="Container Port: 30005" Type="Port" Display="always" Required="false" Mask="false">30005</Config>
+    <Config Name="RTL-SDR Device" Target="" Default="" Mode="" Description="Container Device: " Type="Device" Display="always" Required="true" Mask="false"/>
+</Container>
