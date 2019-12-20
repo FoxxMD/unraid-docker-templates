@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="1">
+    <Name>shoginn-flightradar24</Name>
+    <Repository>shoginn/flightradar24:latest</Repository>
+    <Registry>https://hub.docker.com/r/shoginn/flightradar24</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/86350-support-foxxmd-shoginn-flightradar24/</Support>
+    <Project>https://github.com/ShoGinn/flightradar24</Project>
+    <Overview>FlightRadar24 is a Swedish internet-based service that shows real-time commercial aircraft flight information on a map. This docker contains FR24's binary for consuming an ADSB feed and uploading the parsed data to FR24.[br][br]&#xD;
+        Refer to the support thread for instructions on how to setup a dump1090 feed with your radio device.[br][br]
+        [b]Note:[/b] If you have issues with the docker crashing with default settings set [b]mlat[/b] and [b]mlat w/o gps[/b] to [b]no[/b]. There is a known bug in the current fr24 binary build.</Overview>
+    <Category/>
+    <WebUI/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/shoginn-flightradar24.xml</TemplateURL>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/flightradar24.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <Beta>False</Beta>
+    <Category>Network:Web Other:</Category>
+    <Date>2019-12-20</Date>
+    <DonateText/>
+    <DonateLink/>
+    <Description>FlightRadar24 is a Swedish internet-based service that shows real-time commercial aircraft flight information on a map. This docker contains FR24's binary for consuming an ADSB feed and uploading the parsed data to FR24.[br][br]&#xD;
+        Refer to the support thread for instructions on how to setup a dump1090 feed with your radio device.[br][br]
+        [b]Note:[/b] If you have issues with the docker crashing with default settings set [b]mlat[/b] and [b]mlat w/o gps[/b] to [b]no[/b]. There is a known bug in the current fr24 binary build.</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8754</HostPort>
+                <ContainerPort>8754</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data/>
+    <Environment/>
+    <Labels/>
+    <Config Name="FlightRadar24 Key" Target="FR24FEED_KEY" Default="" Mode="" Description="The key received after registering on FR24" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="fr24 web status port" Target="8754" Default="" Mode="tcp" Description="Container Port: 8754" Type="Port" Display="always" Required="false" Mask="false">8754</Config>
+    <Config Name="dump1090 Server IP" Target="DUMP1090_SERVER" Default="" Mode="" Description="IP Address of dump1090 feed" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="dump1090 Server Port" Target="DUMP1090_PORT" Default="" Mode="" Description="Port for dump1090 feed (defaults to 30005)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="mlat" Target="MLAT" Default="" Mode="" Description="MLAT: yes/no (defaults yes)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="mlat w/o gps" Target="MLAT_WITHOUT_GPS" Default="" Mode="" Description="MLAT w/o GPS: yes/no (defaults yes)" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
