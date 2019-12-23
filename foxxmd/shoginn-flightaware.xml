@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="1">
+    <Name>shoginn-flightaware</Name>
+    <Repository>shoginn/flightaware:latest</Repository>
+    <Registry>https://hub.docker.com/r/shoginn/flightaware</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/86443-support-foxxmd-shoginn-flightaware/</Support>
+    <Project>https://uk.flightaware.com/adsb/flightfeeder/</Project>
+    <Overview>FlightAware is a digital aviation company that operates a flight tracking and data platform. This docker contains the binary for FlightAware's FlightFeeder application, which consumes an ADSB feed and uploads the parsed data to FA.[br][br]&#xD;
+        Refer to the support thread for instructions on how to setup a dump1090 feed with your radio device.[br][br]
+    </Overview>
+    <Category/>
+    <WebUI/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/shoginn-flightaware.xml</TemplateURL>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/flightaware.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <Beta>False</Beta>
+    <Category>Network:Web Other:</Category>
+    <Date>2019-12-23</Date>
+    <DonateText/>
+    <DonateLink/>
+    <Description>FlightAware is a digital aviation company that operates a flight tracking and data platform. This docker contains the binary for FlightAware's FlightFeeder application, which consumes an ADSB feed and uploads the parsed data to FA.[br][br]&#xD;
+        Refer to the support thread for instructions on how to setup a dump1090 feed with your radio device.[br][br]
+    </Description>
+    <Networking/>
+    <Data/>
+    <Environment/>
+    <Labels/>
+    <Config Name="FlightAware Feeder Key" Target="FLIGHTAWARE_FEEDER_ID" Default="" Mode="" Description="The key received after registering on FlightAware" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="dump1090 Server IP" Target="DUMP1090_SERVER" Default="" Mode="" Description="IP Address of dump1090 feed" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="dump1090 Server Port" Target="DUMP1090_PORT" Default="" Mode="" Description="Port for dump1090 feed (defaults to 30005)" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
