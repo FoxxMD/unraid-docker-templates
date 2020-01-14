@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="1">
+    <Name>shoginn-vrs</Name>
+    <Repository>shoginn/vrs:latest</Repository>
+    <Registry>https://hub.docker.com/r/shoginn/vrs</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/87372-support-foxxmd-shoginn-vrs/</Support>
+    <Project>http://virtualradarserver.co.uk/</Project>
+    <Overview>Virtual Radar Server is an open-source .NET application used to overlay and track the real time position of aircraft on a map within a modern browser.[br][br]&#xD;
+        VRS can receive aircraft data from a multitude of sources including ADS-B streams.[br][br]&#xD;
+        Refer to the support thread for more information on setup/configuration beyond initial docker initialization.
+    </Overview>
+    <Category>Network:Web</Category>
+    <Date>2020-01-14</Date>
+    <Beta>False</Beta>
+    <WebUI>http://[IP]:[PORT:8080]/VirtualRadar/desktop.html</WebUI>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/shoginn-vrs.xml</TemplateURL>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/vrs.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Description>Virtual Radar Server is an open-source .NET application used to overlay and track the real time position of aircraft on a map within a modern browser.[br][br]&#xD;
+        VRS can receive aircraft data from a multitude of sources including ADS-B streams.[br][br]&#xD;
+        Refer to the support thread for more information on setup/configuration beyond initial docker initialization.
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8177</HostPort>
+                <ContainerPort>8080</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/vrs</HostDir>
+            <ContainerDir>/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment/>
+    <Labels/>
+    <Config Name="Config" Target="/config" Default="/mnt/user/appdata/vrs" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/vrs</Config>
+    <Config Name="Web UI" Target="8080" Default="8177" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8177</Config>
+</Container>
