@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="1">
+<Container version="2">
     <Name>statping</Name>
     <Repository>hunterlong/statping:latest</Repository>
     <Registry>https://hub.docker.com/r/hunterlong/statping</Registry>
@@ -13,7 +13,7 @@
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/statping.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/statping.png</Icon>
-    <ExtraParams/>
+    <ExtraParams>--user 99:100</ExtraParams>
     <PostArgs/>
     <CPUset/>
     <Beta>False</Beta>
