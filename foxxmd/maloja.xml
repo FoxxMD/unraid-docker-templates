@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Container version="1">
+    <Name>maloja</Name>
+    <Repository>foxxmd/maloja:latest</Repository>
+    <Registry>https://hub.docker.com/r/foxxmd/maloja</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support/>
+    <Project>https://maloja.krateng.ch/</Project>
+    <Overview>Self-hosted music scrobble database to create personal listening statistics and charts as a substitute for Last.fm / Libre.fm / GNU FM.&#xD;
+        &#xD;
+        Features include:&#xD;
+        *  Easy import of existing scrobble data in CSV format (from last.fm, etc.)&#xD;
+        * Custom rules for importing/scrobbling&#xD;
+        * Custom and 3rd party integrations for album/artist artwork&#xD;
+        * Insightful charting to display time-sliced "top charts" for tracks and artists&#xD;
+        * Full listening history and track lookup using multiple sources (youtube, gmusic, spotify..)&#xD;
+        *  A first-party chrome extension for scrobbling from the web as well as third-party scrobble-compliant endpoints for use with other extensions and applications&#xD;
+        &#xD;
+        See the project, https://github.com/krateng/maloja, for more information or the support thread for recommended setup.&#xD;
+        &#xD;
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaServer:Music</Category>
+    <Date>2020-05-18</Date>
+    <WebUI>http://[IP]:[PORT:42010]/</WebUI>
+    <TemplateURL/>
+    <Icon>https://github.com/krateng/maloja/raw/master/maloja/static/png/favicon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Description>Self-hosted music scrobble database to create personal listening statistics and charts as a substitute for Last.fm / Libre.fm / GNU FM.&#xD;
+        &#xD;
+        Features include:&#xD;
+        *  Easy import of existing scrobble data in CSV format (from last.fm, etc.)&#xD;
+        * Custom rules for importing/scrobbling&#xD;
+        * Custom and 3rd party integrations for album/artist artwork&#xD;
+        * Insightful charting to display time-sliced "top charts" for tracks and artists&#xD;
+        * Full listening history and track lookup using multiple sources (youtube, gmusic, spotify..)&#xD;
+        *  A first-party chrome extension for scrobbling from the web as well as third-party scrobble-compliant endpoints for use with other extensions and applications&#xD;
+        &#xD;
+        See the project, https://github.com/krateng/maloja, for more information or the support thread for recommended setup.&#xD;
+        &#xD;
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>42010</HostPort>
+                <ContainerPort>42010</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/maloja</HostDir>
+            <ContainerDir>/root/.local/share/maloja</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value>0.0.0.0</Value>
+            <Name>MALOJA_HOST</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value>yes</Value>
+            <Name>MALOJA_SKIP_SETUP</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <Config Name="Web Port" Target="42010" Default="42010" Mode="tcp" Description="Port for accessing web ui and api" Type="Port" Display="always" Required="true" Mask="false">42010</Config>
+    <Config Name="user data" Target="/root/.local/share/maloja" Default="" Mode="rw" Description="Container Path: /root/.local/share/maloja" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/maloja</Config>
+    <Config Name="container host" Target="MALOJA_HOST" Default="0.0.0.0" Mode="" Description="Container Variable: MALOJA_HOST" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="skip setup" Target="MALOJA_SKIP_SETUP" Default="" Mode="" Description="skip server setup due to running in docker and providing data via env variables" Type="Variable" Display="advanced-hide" Required="true" Mask="false">yes</Config>
+</Container>
