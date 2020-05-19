@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="1">
+<Container version="2">
     <Name>whoogle-search</Name>
     <Repository>benbusby/whoogle-search</Repository>
     <Registry>https://hub.docker.com/r/benbusby/whoogle-search/</Registry>
@@ -11,12 +11,9 @@
     <Project>https://github.com/benbusby/whoogle-search</Project>
     <Overview>Get Google search results, but without any ads, javascript, AMP links, cookies, or IP address tracking. Also includes a dark mode.&#xD;
         &#xD;
-        This app is in BETA. Configuration settings are reset after the container is updated.&#xD;
-        &#xD;
-        Please refer to the project page for additional configuration and usage https://github.com/benbusby/whoogle-search</Overview>
-    <Category/>
+        Refer to the project page for additional configuration and usage https://github.com/benbusby/whoogle-search</Overview>
     <WebUI>http://[IP]:[PORT:5000]/</WebUI>
-    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/whoogle-search.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/FoxxMD/unraid-docker-templates/master/foxxmd/whoogle-search.xml</TemplateURL>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/whoogle.png</Icon>
     <ExtraParams/>
     <PostArgs/>
@@ -26,7 +23,9 @@
     <Date>2020-05-12</Date>
     <DonateText/>
     <DonateLink/>
-    <Description>Get Google search results, but without any ads, javascript, AMP links, cookies, or IP address tracking. Also includes a dark mode.</Description>
+    <Description>Get Google search results, but without any ads, javascript, AMP links, cookies, or IP address tracking. Also includes a dark mode.&#xD;
+        &#xD;
+        Refer to the project page for additional configuration and usage https://github.com/benbusby/whoogle-search</Description>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -37,8 +36,28 @@
             </Port>
         </Publish>
     </Networking>
-    <Data/>
-    <Environment/>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/whoogle</HostDir>
+            <ContainerDir>/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value/>
+            <Name>HTTPS_ONLY</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value/>
+            <Name>EXPOSE_PORT</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
     <Labels/>
-    <Config Name="Web UI" Target="5000" Default="" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">8798</Config>
+    <Config Name="Web UI" Target="5000" Default="" Mode="tcp" Description="Container port to start whoogle on. Default is 5000" Type="Port" Display="always" Required="true" Mask="false">8798</Config>
+    <Config Name="config" Target="/config" Default="" Mode="rw" Description="persistent application data/configuration" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/whoogle</Config>
+    <Config Name="Application HTTPS Only" Target="HTTPS_ONLY" Default="" Mode="" Description="Set whether whoogle should enforce HTTPS inside container. Default is false" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Container Port" Target="EXPOSE_PORT" Default="" Mode="" Description="Container Port to start whoogle on. Default is 5000" Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
