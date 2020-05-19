@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
     <Name>whoogle-search</Name>
     <Repository>benbusby/whoogle-search</Repository>
     <Registry>https://hub.docker.com/r/benbusby/whoogle-search/</Registry>
@@ -57,7 +57,7 @@
     </Environment>
     <Labels/>
     <Config Name="Web UI" Target="5000" Default="" Mode="tcp" Description="Container port to start whoogle on. Default is 5000" Type="Port" Display="always" Required="true" Mask="false">8798</Config>
-    <Config Name="config" Target="/config" Default="" Mode="rw" Description="persistent application data/configuration" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/whoogle</Config>
+    <Config Name="Config" Target="/config" Default="" Mode="rw" Description="persistent application data/configuration" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/whoogle</Config>
     <Config Name="Application HTTPS Only" Target="HTTPS_ONLY" Default="" Mode="" Description="Set whether whoogle should enforce HTTPS inside container. Default is false" Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Container Port" Target="EXPOSE_PORT" Default="" Mode="" Description="Container Port to start whoogle on. Default is 5000" Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
