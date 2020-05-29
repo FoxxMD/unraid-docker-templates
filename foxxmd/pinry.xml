@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/getpinry/pinry/</Support>
+    <Support>https://forums.unraid.net/topic/93052-support-foxxmd-pinry/</Support>
     <Project>https://docs.getpinry.com/</Project>
     <Project/>
     <Overview>A tiling image board system for people who want to save, tag, and share images, videos and webpages in an easy to skim through format. Basically self-hosted Pinterest. Project includes a chrome/firefox extension bookmarklet.</Overview>
