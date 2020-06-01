@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>pgadmin4</Name>
+    <Repository>dpage/pgadmin4</Repository>
+    <Registry>https://hub.docker.com/r/dpage/pgadmin4/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/dpage/pgadmin4/</Support>
+    <Project>https://www.pgadmin.org/</Project>
+    <Overview>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.</Overview>
+    <Beta>False</Beta>
+    <Category>Tools:</Category>
+    <Date>2020-06-01</Date>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <TemplateURL/>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/pgadmin4.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Description>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8792</HostPort>
+                <ContainerPort>80</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/pgadmin</HostDir>
+            <ContainerDir>/var/lib/pgadmin</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value/>
+            <Name>PGADMIN_DEFAULT_EMAIL</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value/>
+            <Name>PGADMIN_DEFAULT_PASSWORD</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value>0.0.0.0</Value>
+            <Name>PGADMIN_LISTEN_ADDRESS</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <Config Name="Web UI" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8792</Config>
+    <Config Name="Default Email" Target="PGADMIN_DEFAULT_EMAIL" Default="" Mode="" Description="Must provide if not using an existing configuration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Default Password" Target="PGADMIN_DEFAULT_PASSWORD" Default="" Mode="" Description="Must provide if not using an existing configuration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Config" Target="/var/lib/pgadmin" Default="" Mode="rw" Description="Container Path: /lib/var/pgadmin" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/pgadmin4</Config>
+    <Config Name="Listen Address" Target="PGADMIN_LISTEN_ADDRESS" Default="" Mode="" Description="Container Variable: PGADMIN_LISTEN_ADDRESS" Type="Variable" Display="advanced" Required="false" Mask="false">0.0.0.0</Config>
+</Container>
