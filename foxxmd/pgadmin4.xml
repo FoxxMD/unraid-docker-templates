@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/dpage/pgadmin4/</Support>
+    <Support>https://forums.unraid.net/topic/93179-support-foxxmd-pgadmin4/</Support>
     <Project>https://www.pgadmin.org/</Project>
     <Overview>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.</Overview>
     <Beta>False</Beta>
