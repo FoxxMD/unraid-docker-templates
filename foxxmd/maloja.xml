@@ -46,6 +46,16 @@
         See the project, https://github.com/krateng/maloja, for more information or the support thread for recommended setup.&#xD;
         &#xD;
     </Description>
+    <Changes>
+        [center][font size=5]maloja Template Change Log[/font][/center]
+        [font size=4]2020.05.18[/font]
+        - Initial Release
+
+        [font size=4]2020.06.10[/font]
+        - Add changes node to unraid template
+        - Add MALOJA_DATA_DIRECTORY env and change User Data container path so config directory is more standardized
+        - Update descriptions on advanced configuration env variables
+    </Changes>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -74,10 +84,16 @@
             <Name>MALOJA_SKIP_SETUP</Name>
             <Mode/>
         </Variable>
+        <Variable>
+            <Value>/config</Value>
+            <Name>MALOJA_DATA_DIRECTORY</Name>
+            <Mode/>
+        </Variable>
     </Environment>
     <Labels/>
     <Config Name="Web Port" Target="42010" Default="42010" Mode="tcp" Description="Port for accessing web ui and api" Type="Port" Display="always" Required="true" Mask="false">42010</Config>
-    <Config Name="User Data" Target="/root/.local/share/maloja" Default="" Mode="rw" Description="Container Path: /root/.local/share/maloja" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/maloja</Config>
-    <Config Name="Container Host" Target="MALOJA_HOST" Default="0.0.0.0" Mode="" Description="Container Variable: MALOJA_HOST" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
-    <Config Name="Skip Setup" Target="MALOJA_SKIP_SETUP" Default="" Mode="" Description="skip server setup due to running in docker and providing data via env variables" Type="Variable" Display="advanced-hide" Required="true" Mask="false">yes</Config>
+    <Config Name="User Data" Target="/root/.local/share/maloja" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/maloja</Config>
+    <Config Name="Container Host" Target="MALOJA_HOST" Default="0.0.0.0" Mode="" Description="Specifies to Maloja what address to listen on (should not change)" Type="Variable" Display="advanced" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Skip Setup" Target="MALOJA_SKIP_SETUP" Default="" Mode="" Description="Skip server setup due to running in docker and providing data via env variables" Type="Variable" Display="advanced" Required="true" Mask="false">yes</Config>
+    <Config Name="Data Directory" Target="MALOJA_DATA_DIRECTORY" Default="" Mode="" Description="Specifies to Maloja which directory to use for data/configuration files" Type="Variable" Display="advanced" Required="false" Mask="false">/config</Config>
 </Container>
