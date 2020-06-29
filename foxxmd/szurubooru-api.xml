@@ -10,7 +10,7 @@
     <Support>https://forums.unraid.net/topic/79126-support-foxxmd-szurubooru/</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
     <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
-        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
+        [span style='color: #E80000;'][b]Requires postgres 11 to run[/b][/span][br][br]&#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>MediaServer:Photos</Category>
@@ -25,9 +25,20 @@
     <DonateLink/>
     <Description>
         Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
-        [span style='color: #E80000;'][b]Requires elasticsearch 5 (or above) and postgres 11 to run[/b][/span][br][br]&#xD;
+        [span style='color: #E80000;'][b]Requires postgres 11 to run[/b][/span][br][br]&#xD;
         (Optional) To use your own config.yaml create a Path config that mounts to [b]/opt/app/config.yaml[/b] in the container&#xD;
     </Description>
+    <Changes>
+        [center][font size=5]maloja Template Change Log[/font][/center]
+        [font size=4]2019.04.01[/font]
+        - Initial Release
+
+        [font size=4]2019.12.16[/font]
+        - Use official application dockerhub repository
+
+        [font size=4]2020.06.29[/font]
+        - Remove references to elasticsearch (no longer needed)
+    </Changes>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -46,11 +57,6 @@
         </Volume>
     </Data>
     <Environment>
-        <Variable>
-            <Value/>
-            <Name>ESEARCH_HOST</Name>
-            <Mode/>
-        </Variable>
         <Variable>
             <Value/>
             <Name>POSTGRES_HOST</Name>
@@ -73,7 +79,6 @@
         </Variable>
     </Environment>
     <Labels/>
-    <Config Name="Elasticsearch Host" Target="ESEARCH_HOST" Default="" Mode="" Description="IP address of Elasticsearch instance" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="" Mode="" Description="IP address of Postgres instance" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Postgres DB" Target="POSTGRES_DB" Default="" Mode="" Description="Name of the database on Postgres instance to use" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Mode="" Description="Username of Postgres user" Type="Variable" Display="always" Required="true" Mask="false"/>
