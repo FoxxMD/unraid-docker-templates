@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>https://github.com/OpenZWave/qt-openzwave</Support>
+    <Support>https://forums.unraid.net/topic/96976-support-foxxmd-ozwdaemon/</Support>
     <Project>https://github.com/OpenZWave/qt-openzwave</Project>
     <Overview>Container for running the OpenZWave MQTT Adapter (for Home Assistant via the new Z-Wave Integration)&#xD;
         &#xD;
