@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>statping</Name>
-    <Repository>hunterlong/statping:latest</Repository>
-    <Registry>https://hub.docker.com/r/hunterlong/statping</Registry>
+    <Repository>statping/statping:latest</Repository>
+    <Registry>https://hub.docker.com/r/statping/statping</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>sh</Shell>
@@ -22,6 +22,14 @@
     <DonateText/>
     <DonateLink/>
     <Description>An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.</Description>
+    <Changes>
+        [center][font size=5]statping Template Change Log[/font][/center]
+        [font size=4]2020.01.18[/font]
+        - Initial Release
+
+        [font size=4]2020.09.29[/font]
+        - Use official application dockerhub repository
+    </Changes>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
