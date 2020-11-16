@@ -2,7 +2,7 @@
 <Container version="2">
     <Name>maloja</Name>
     <Repository>joniator/maloja:latest</Repository>
-    <Registry>https://hub.docker.com/r/foxxmd/maloja</Registry>
+    <Registry>https://hub.docker.com/r/joniator/maloja</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>sh</Shell>
