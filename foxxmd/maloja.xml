@@ -27,7 +27,7 @@
     <Date>2020-05-18</Date>
     <WebUI>http://[IP]:[PORT:42010]/</WebUI>
     <TemplateURL/>
-    <Icon>https://github.com/krateng/maloja/raw/master/maloja/static/png/favicon.png</Icon>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/maloja.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
