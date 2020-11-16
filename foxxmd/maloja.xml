@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>maloja</Name>
-    <Repository>foxxmd/maloja:latest</Repository>
+    <Repository>joniator/maloja:latest</Repository>
     <Registry>https://hub.docker.com/r/foxxmd/maloja</Registry>
     <Network>bridge</Network>
     <MyIP/>
@@ -55,6 +55,9 @@
         - Add changes node to unraid template
         - Add MALOJA_DATA_DIRECTORY env and change User Data container path so config directory is more standardized
         - Update descriptions on advanced configuration env variables
+
+        [font size=4]2020.11.16[/font]
+        - Change repository to one that uses automated builds from the project
     </Changes>
     <Networking>
         <Mode>bridge</Mode>
