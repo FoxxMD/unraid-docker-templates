@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="1">
+<Container version="2">
     <Name>ozwdaemon</Name>
     <Repository>openzwave/ozwdaemon:allinone-latest</Repository>
     <Registry>https://hub.docker.com/r/openzwave/ozwdaemon/</Registry>
@@ -38,6 +38,14 @@
         https://www.home-assistant.io/integrations/ozw/&#xD;
         &#xD;
         Or visit the unraid forum support thread for more configuration/info</Description>
+    <Changes>
+        [center][font size=5]ozwdaemon Template Change Log[/font][/center]
+        [font size=4]2020.09.10[/font]
+        - Initial Release
+
+        [font size=4]2020.11.25[/font]
+        - Add missing config volume
+    </Changes>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
@@ -53,7 +61,13 @@
             </Port>
         </Publish>
     </Networking>
-    <Data/>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/ozw</HostDir>
+            <ContainerDir>/opt/ozw/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
     <Environment>
         <Variable>
             <Value/>
@@ -91,6 +105,7 @@
     <Config Name="USB Path" Target="USB_PATH" Default="" Mode="" Description="Path to the USB stick/serial device for your z-wave controller in the container. This should be the same value as USB Z-Wave Device." Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Web UI Port" Target="7800" Default="7800" Mode="tcp" Description="Port used to access the web-based ozw-admin instance in the container (when using allinone image)" Type="Port" Display="always" Required="false" Mask="false">7800</Config>
     <Config Name="USB Z-Wave Device" Target="" Default="" Mode="" Description="USB stick/serial device passthrough (your z-wave controller)" Type="Device" Display="always" Required="true" Mask="false"/>
+    <Config Name="Config" Target="/opt/ozw/config" Default="" Mode="rw" Description="Container Path: /opt/ozw/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ozw</Config>
     <Config Name="MQTT Port" Target="MQTT_PORT" Default="1883" Mode="" Description="The port to access the MQTT Host on. Defaults to 1883" Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="MQTT User" Target="MQTT_USERNAME" Default="" Mode="" Description="Username to (optionally) authenticate with MQTT" Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="MQTT Password" Target="MQTT_PASSWORD" Default="" Mode="" Description="Password to (optionally) authenticate with MQTT" Type="Variable" Display="advanced" Required="false" Mask="true"/>
