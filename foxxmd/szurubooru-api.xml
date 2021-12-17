@@ -9,9 +9,9 @@
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/79126-support-foxxmd-szurubooru/</Support>
     <Project>https://github.com/rr-/szurubooru</Project>
-    <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities[br][br]&#xD;
-        [span style='color: #E80000;'][b]Requires postgres 11 to run[/b][/span][br][br]&#xD;
+    <Overview>Backend API container for Szurubooru, an image board engine for small and medium communities
     </Overview>
+    <Requires>Postgres 11 installed</Requires>
     <Beta>False</Beta>
     <Category>MediaServer:Photos</Category>
     <Date>2019-04-01</Date>
