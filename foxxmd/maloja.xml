@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>maloja</Name>
-    <Repository>joniator/maloja:latest</Repository>
-    <Registry>https://hub.docker.com/r/joniator/maloja</Registry>
+    <Repository>krateng/maloja:latest</Repository>
+    <Registry>https://hub.docker.com/r/krateng/maloja</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>sh</Shell>
@@ -58,6 +58,10 @@
 
         [font size=4]2020.11.16[/font]
         - Change repository to one that uses automated builds from the project
+
+        [font size=4]2021.12.17[/font]
+        - Change repository to use official source
+        - Remove MALOJA_SKIP_SETUP variable since it is now provided by default in dockerfile
     </Changes>
     <Networking>
         <Mode>bridge</Mode>
@@ -83,11 +87,6 @@
             <Mode/>
         </Variable>
         <Variable>
-            <Value>yes</Value>
-            <Name>MALOJA_SKIP_SETUP</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
             <Value>/config</Value>
             <Name>MALOJA_DATA_DIRECTORY</Name>
             <Mode/>
@@ -97,6 +96,5 @@
     <Config Name="Web Port" Target="42010" Default="42010" Mode="tcp" Description="Port for accessing web ui and api" Type="Port" Display="always" Required="true" Mask="false">42010</Config>
     <Config Name="User Data" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/maloja</Config>
     <Config Name="Container Host" Target="MALOJA_HOST" Default="0.0.0.0" Mode="" Description="Specifies to Maloja what address to listen on (should not change)" Type="Variable" Display="advanced" Required="true" Mask="false">0.0.0.0</Config>
-    <Config Name="Skip Setup" Target="MALOJA_SKIP_SETUP" Default="" Mode="" Description="Skip server setup due to running in docker and providing data via env variables" Type="Variable" Display="advanced" Required="true" Mask="false">yes</Config>
     <Config Name="Data Directory" Target="MALOJA_DATA_DIRECTORY" Default="" Mode="" Description="Specifies to Maloja which directory to use for data/configuration files" Type="Variable" Display="advanced" Required="false" Mask="false">/config</Config>
 </Container>
