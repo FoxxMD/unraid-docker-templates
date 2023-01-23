@@ -9,7 +9,20 @@
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/93179-support-foxxmd-pgadmin4/</Support>
     <Project>https://www.pgadmin.org/</Project>
-    <Overview>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.</Overview>
+    <Overview>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.&#xD;
+        &#xD;
+        **REQUIRED Initial Setup**&#xD;
+        &#xD;
+        The Config directory mapped to appdata requires specific ownership by the non-root user pgadmin (inside the container).&#xD;
+        &#xD;
+        * Either create the folder mapped to Config in appdata before starting this container or wait for it be created on container startup.&#xD;
+        * Then open unraid cli and change ownership for the directory to 5050:5050 with the following command&#xD;
+        &#xD;
+        chown -R 5050:5050 /mnt/user/appdata/pgadmin4&#xD;
+        &#xD;
+        Restart the container to continue setup.&#xD;
+        &#xD;
+        More information on the mapped directory and other container options can be found here: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#mapped-files-and-directories</Overview>
     <Beta>False</Beta>
     <Category>Tools:</Category>
     <Date>2020-06-01</Date>
@@ -21,7 +34,28 @@
     <CPUset/>
     <DonateText/>
     <DonateLink/>
-    <Description>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.</Description>
+    <Description>pgAdmin 4 is a web based administration tool for the PostgreSQL database. This is the official image provided by pgadmin.&#xD;
+        &#xD;
+        **REQUIRED Initial Setup**&#xD;
+        &#xD;
+        The Config directory mapped to appdata requires specific ownership by the non-root user pgadmin (inside the container).&#xD;
+        &#xD;
+        * Either create the folder mapped to Config in appdata before starting this container or wait for it be created on container startup.&#xD;
+        * Then open unraid cli and change ownership for the directory to 5050:5050 with the following command&#xD;
+        &#xD;
+        chown -R 5050:5050 /mnt/user/appdata/pgadmin4&#xD;
+        &#xD;
+        Restart the container to continue setup.&#xD;
+        &#xD;
+        More information on the mapped directory and other container options can be found here: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#mapped-files-and-directories</Description>
+    <Changes>
+        [center][font size=5]pgadmin4 Template Change Log[/font][/center]
+        [font size=4]2020-06-01[/font]
+        - Initial Release
+
+        [font size=4]2023.01.23[/font]
+        - Update description to include appdata mapped directory ownership changes
+    </Changes>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
