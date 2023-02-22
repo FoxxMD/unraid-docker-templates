@@ -40,6 +40,9 @@
 
         [font size=4]2021.03.17[/font]
         - Update description to include Jellyfin source
+
+        [font size=4]2023.02.22[/font]
+        - Add UID/GID env variables, removed unused logs volume, and updated container config directory
     </Changes>
     <Networking>
         <Mode>bridge</Mode>
@@ -53,19 +56,15 @@
     </Networking>
     <Data>
         <Volume>
-            <HostDir>/mnt/user/appdata/spotify-scrobbler/config</HostDir>
-            <ContainerDir>/home/node/config</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-        <Volume>
-            <HostDir>/mnt/user/appdata/spotify-scrobbler/logs</HostDir>
-            <ContainerDir>/home/node/app/logs</ContainerDir>
+            <HostDir>/mnt/user/appdata/multi-scrobbler/config</HostDir>
+            <ContainerDir>/config</ContainerDir>
             <Mode>rw</Mode>
         </Volume>
     </Data>
     <Environment/>
     <Labels/>
     <Config Name="Web Port" Target="9078" Default="" Mode="tcp" Description="Container Port: 9078" Type="Port" Display="always" Required="false" Mask="false">9078</Config>
-    <Config Name="Config" Target="/home/node/config" Default="" Mode="rw" Description="Container Path: /home/node/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/spotify-scrobbler/config</Config>
-    <Config Name="Logs" Target="/home/node/app/logs" Default="" Mode="rw" Description="Container Path: /home/node/app/logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/spotify-scrobbler/logs</Config>
+    <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/multi-scrobbler/config</Config>
+    <Config Name="UID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+    <Config Name="GID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
 </Container>
