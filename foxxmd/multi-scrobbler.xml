@@ -9,7 +9,7 @@
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/99133-support-foxxmd-multi-scrobbler/</Support>
     <Project/>
-    <Overview>Track your music listening history from api-based sources like Spotify, Plex (Tautulli), Subsonic (Airsonic), Jellyfin, Mopidy, Deezer and record to Last.fm, Maloja, and Listenbrainz&#xD;</Overview>
+    <Overview>Track your music listening history from api-based sources like Spotify, Plex (Tautulli), Subsonic (Airsonic), Jellyfin, Mopidy, Deezer, JRiver and record to Last.fm, Maloja, and Listenbrainz&#xD;</Overview>
     <Beta>False</Beta>
     <Category>Network:Web MediaServer:Music</Category>
     <Date>2020-11-19</Date>
@@ -21,7 +21,7 @@
     <CPUset/>
     <DonateText/>
     <DonateLink/>
-    <Description>Track your music listening history from api-based sources Spotify, Plex (Tautulli), Subsonic (Airsonic), Jellyfin, Mopidy, Deezer and record to Last.fm, Maloja, and Listenbrainz&#xD;</Description>
+    <Description>Track your music listening history from api-based sources Spotify, Plex (Tautulli), Subsonic (Airsonic), Jellyfin, Mopidy, Deezer, JRiver and record to Last.fm, Maloja, and Listenbrainz&#xD;</Description>
     <Changes>
         [center][font size=5]multi-scrobbler Template Change Log[/font][/center]
         [font size=4]2020.11.19[/font]
