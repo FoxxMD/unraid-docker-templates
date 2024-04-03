@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>tautulli-notification-digest</Name>
+    <Repository>foxxmd/tautulli-notification-digest</Repository>
+    <Registry>https://hub.docker.com/r/foxxmd/tautulli-notification-digest</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/160455-support-foxxmd-tautulli-notification-digest/</Support>
+    <Project>https://github.com/FoxxMD/tautulli-notification-digest</Project>
+    <Overview>tautuilli-notification-digest (TND) acts a middleman between Discord and Tautulli for notifying you about recently added media to your plex server.&#xD;
+        &#xD;
+        It collects all of the Recently Added notifications Tautulli would send to a Discord notification agent throughout the day and then compiles them all into **one** notification that is sent on a schedule you configure. It reduces multiple, noisy notifications for active plex server into one digestable message sent once a day.&#xD;
+        &#xD;
+        You will need to make changes to Tautulli before TND is usable on unraid. Refer to the Support Thread or use the Quick Start guide in the project README to get started.</Overview>
+    <Category>Tools: MediaServer:Video Status:Stable</Category>
+    <WebUI/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/tautulli-notification-digest.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/FoxxMD/tautulli-notification-digest/main/docs/assets/icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <DonateText/>
+    <DonateLink/>
+    <Requires>Read the Setup section in the Readme (https://github.com/FoxxMD/tautulli-notification-digest?tab=readme-ov-file#setup) or see the Support Thread for initial setup.</Requires>
+    <Maintainer>
+        <WebPage>https://github.com/FoxxMD</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-04-03 - Initial Release
+    </Changes>
+    <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tautulli-digest-test/</Config>
+    <Config Name="API" Target="8078" Default="" Mode="tcp" Description="Port TND should listen for incoming notifications from Tautulli on" Type="Port" Display="always" Required="false" Mask="false">8079</Config>
+    <Config Name="Discord Webook URL" Target="DISCORD_WEBHOOK" Default="" Mode="" Description="Webhook used to post the digest to the discord server channel" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Cron Schedule" Target="CRON" Default="0 17 * * *" Mode="" Description="Cron expression for when TND should post digest" Type="Variable" Display="always" Required="false" Mask="false">0 17 * * *</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
