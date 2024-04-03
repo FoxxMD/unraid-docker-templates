@@ -34,7 +34,7 @@
         ### 2024-04-03 - Initial Release
     </Changes>
     <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tautulli-digest-test/</Config>
-    <Config Name="API" Target="8078" Default="" Mode="tcp" Description="Port TND should listen for incoming notifications from Tautulli on" Type="Port" Display="always" Required="false" Mask="false">8079</Config>
+    <Config Name="API" Target="8078" Default="8078" Mode="tcp" Description="Port TND should listen for incoming notifications from Tautulli on" Type="Port" Display="always" Required="false" Mask="false">8078</Config>
     <Config Name="Discord Webook URL" Target="DISCORD_WEBHOOK" Default="" Mode="" Description="Webhook used to post the digest to the discord server channel" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Cron Schedule" Target="CRON" Default="0 17 * * *" Mode="" Description="Cron expression for when TND should post digest" Type="Variable" Display="always" Required="false" Mask="false">0 17 * * *</Config>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
