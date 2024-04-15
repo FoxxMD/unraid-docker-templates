@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>aiyabot</Name>
+    <Repository>ghcr.io/kilvoctu/aiyabot:latest</Repository>
+    <Registry>https://github.com/Kilvoctu/aiyabot/pkgs/container/aiyabot</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/161720-support-foxxmd-aiyabot/</Support>
+    <Project>https://github.com/Kilvoctu/aiyabot</Project>
+    <Overview>A docker bot for interacting with Stable Diffusion AI to generate images&#xD;
+        &#xD;
+        Compatible with AUTOMATIC1111's Stable Diffusion web UI or SD.Next, provides these features through Discord commands:&#xD;
+        &#xD;
+        * text2image&#xD;
+        * image2image&#xD;
+        * prompt from image&#xD;
+        * generate prompts from text&#xD;
+        * upscale image&#xD;
+        * image identification (metadata query)&#xD;
+        &#xD;
+        Settings for generation are configurable per channel:&#xD;
+        &#xD;
+        * Model to generate with&#xD;
+        * Width/Height&#xD;
+        * Extra nets (lora, hypernet)&#xD;
+        * Prompt/Negative prompt&#xD;
+        * Batch generation settings&#xD;
+        * highres fix/face restore/VAE&#xD;
+        * strength/guidance(cfg)/clip skip/styles&#xD;
+        * mark as spoiler</Overview>
+    <Beta>False</Beta>
+    <Category>Network:Messenger</Category>
+    <Date>2024-04-15</Date>
+    <WebUI/>
+    <TemplateURL>https://github.com/FoxxMD/unraid-docker-templates/blob/master/foxxmd/aiyabot.xml</TemplateURL>
+    <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/aiya.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Requires>You must create a Discord bot and have access to a Stable Diffusion API before this application is usable. Follow the directions in the project wiki or support thread to get a bot running. Additionally, while the bot does take care of many default settings you must still have a basic understanding of Stable Diffusion usage to get good results.</Requires>
+    <Config Name="Discord Bot TOKEN" Target="TOKEN" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">YOUR_DISCORD_BOT_TOKEN</Config>
+    <Config Name="Stable Diffusion URL" Target="URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://YOUR_UNRAID_IP:7860</Config>
+    <Config Name="Download and install optional prompt generation command" Target="USE_GENERATE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+    <Config Name="Bot Generation Outputs" Target="/app/outputs" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/aiyabot/outputs</Config>
+    <Config Name="Bot Configuration" Target="/app/resources" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/aiyabot/resources</Config>
+</Container>
