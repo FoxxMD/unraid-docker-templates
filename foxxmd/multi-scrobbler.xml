@@ -16,7 +16,7 @@
     <WebUI>http://[IP]:[PORT:9078]/</WebUI>
     <TemplateURL/>
     <Icon>https://github.com/FoxxMD/unraid-docker-templates/raw/master/icons/multi-scrobbler.png</Icon>
-    <ExtraParams/>
+    <ExtraParams>--user 99:100</ExtraParams>
     <PostArgs/>
     <CPUset/>
     <DonateText/>
@@ -38,6 +38,9 @@
 
         [font size=4]2023.02.22[/font]
         - Add additional sources/clients to description and remove beta flag
+
+        [font size=4]2026.11.12[/font]
+        - Move user ownership to ExtraParams (see changelog for 0.21.0)
     </Changes>
     <Networking>
         <Mode>bridge</Mode>
@@ -60,6 +63,4 @@
     <Labels/>
     <Config Name="Web Port" Target="9078" Default="" Mode="tcp" Description="Container Port: 9078" Type="Port" Display="always" Required="false" Mask="false">9078</Config>
     <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/multi-scrobbler/config</Config>
-    <Config Name="UID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
-    <Config Name="GID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
 </Container>
